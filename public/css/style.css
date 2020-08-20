@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+}
+body {
+    box-sizing: border-box;
+}
+body,html {
+    height: 100%;
+    width: 100%;
+}
+.nav-person {
+    background: rgba(97, 97, 177, 0.9);
+    padding: 4.4rem;
+    height: 4.4rem;
+}
+/* page mainJs */
+#btn-purple {
+    background: rgba(97, 97, 177, 1.0);
+    color: #ffffff;
+    font-weight: 500;
+}
+#btn-purple:hover {
+    background: rgb(131, 131, 185);
+    font-weight: 500;
+    transition: 0.6s;
+}
+#bg-dimension-jumbotron{
+    background: rgba(126, 126, 187, 0.9);
+    /* background: rgba(81, 81, 145, 0.9); */
+    border-radius: 0.5rem;
+    color: cornsilk;
+    padding: 0.5rem;
+}
+.person-home {
+    margin-top: 0.5rem;
+}

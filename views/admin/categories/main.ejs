@@ -1,0 +1,50 @@
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
+<body>
+    <div class="container">
+        <hr>
+        <h2>Categories</h2>
+        <a class="btn" id="btn-purple" href="/admin/categories/new">Create a New Category</a>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(category => { %>
+                    <tr>
+                        <th><%= category.id %></th>
+                        <th><%= category.title %></th>
+                        <th><%= category.slug %></th>
+                        <th>
+                            <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-primary">Edit</a href="">
+                            <form id="form-cancel" method="POST" action="/categories/delete" style="display: inline;" onsubmit="deleteConfirm(event, this)">
+                                <input type="hidden" name="id" value="<%- category.id %>">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </th>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+  function deleteConfirm(event, form) {
+    event.preventDefault()
+    console.log('form didnt send!')
+
+    let questionConfirmation = confirm("Do you want to delete this category?")
+
+    if (questionConfirmation) {
+        form.submit()
+    }
+}
+
+</script>
+<%- include ('../../partials/header.ejs') %>
